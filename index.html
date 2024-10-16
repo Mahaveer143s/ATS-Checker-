@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional ATS Resume Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ATS Resume Checker</h1>
+        <p>Upload your resume and see how to improve it for better ATS performance.</p>
+
+        <input type="file" id="fileInput" accept=".pdf, .doc, .docx">
+        <button id="analyzeBtn">Analyze Resume</button>
+
+        <div id="resultCard" class="result-card" style="display: none;">
+            <div class="progress-container">
+                <!-- Left Side: Circular Progress -->
+                <div class="circle-wrap">
+                    <div class="circle">
+                        <div class="mask full">
+                            <div class="fill"></div>
+                        </div>
+                        <div class="mask half">
+                            <div class="fill"></div>
+                        </div>
+                        <div class="inside-circle">0%</div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Resume Info -->
+                <div class="resume-info">
+                    <p><strong>Resume Name:</strong> <span id="resumeName">No file selected</span></p>
+                    <p><strong>Candidate Name:</strong> <span id="candidateName">Unknown</span></p>
+                    <p><strong>Suggested File Name:</strong> <span id="suggestedName">-</span></p>
+                </div>
+            </div>
+
+            <div id="corrections" class="corrections mx-2"></div>
+
+            <!-- Download Button -->
+            <button id="downloadBtn" style="display: none;">Download Summary</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
